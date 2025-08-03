@@ -1,0 +1,36 @@
+name: health_hs
+description: Wrapper for the iOS HealthKit and Android Health services.
+version: 2.0.0+4
+
+environment:
+  sdk: '>=2.19.0 <4.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: ^0.18.0
+  device_info_plus: ^8.2.2
+  json_annotation: ^4.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # Using json_serializable to auto generate json code (.g files) with this command:
+  #   dart run build_runner build --delete-conflicting-outputs
+  build_runner: ^2.3.3
+  json_serializable: ^6.5.0
+  mocktail: ^0.3.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.ß
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: hs.plugins.health
+        pluginClass: HealthPlugin
+      ios:
+        pluginClass: HealthPlugin
